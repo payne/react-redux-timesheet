@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import EmployeeTable from './EmployeeTable';
+import EmployeeContext from './EmployeeContext';
 import * as EmployeeActionCreators from '../actions/EmployeeActionCreator';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
@@ -12,13 +13,16 @@ class Employees extends React.Component {
     listEmployees();
   }
 
+
   render() {
     const { employees, deleteEmployee, restoreEmployee } = this.props;
 
     return (
       <div>
         <h1>Employees</h1>
-        <EmployeeTable employees={employees} onDelete={deleteEmployee} onRestore={restoreEmployee} />
+        <EmployeeContext.Provider value={employees}>
+          <EmployeeTable employees={employees} onDelete={deleteEmployee} onRestore={restoreEmployee} />
+        </EmployeeContext.Provider>
         <Link to="/employees/detail">
           <Button bsStyle="primary"> New Employee </Button>
         </Link>
