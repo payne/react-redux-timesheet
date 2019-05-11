@@ -3,7 +3,14 @@
 exports[`<ProjectRow /> should render to match the snapshot 1`] = `
 <tr>
   <td>
+    <button
+      onClick={[Function]}
+    >
+      XXX
+    </button>
     NAME
+     click: 
+    0
   </td>
   <td>
     DESCRIPTION
