@@ -4,4 +4,7 @@ import { shallow } from 'enzyme';
 import EmployeeTable from './EmployeeTable';
 
 describe('<Employees />', () => {
+  it('should have some', () => {
+
+  });
 });
