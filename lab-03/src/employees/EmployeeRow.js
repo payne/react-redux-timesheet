@@ -3,7 +3,10 @@ import PropTypes from 'prop-types';
 
 class EmployeeRow extends React.Component {
   render() {
-    return null;
+    const { employee } = this.props;
+    return (
+      <tr><td>{employee.name}</td></tr>
+    );
   }
 }
 
