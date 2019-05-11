@@ -2,8 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 class ProjectRow extends React.Component {
-  count = 0;
-  clickCount() { this.count++; }
+  state = { count: 0 };
+  // Really use a function when passing to setSTate
+  clickCount = () => { this.setState({ count: this.state.count + 1 }); }
   render() {
     const { project } = this.props;
 
@@ -13,7 +14,7 @@ class ProjectRow extends React.Component {
           <button onClick={this.clickCount}>XXX</button>
         </td>
         <td>
-          {project.name} click: {this.count}</td>
+          {project.name} click: {this.state.count}</td>
         <td>{project.description}</td>
       </tr>
     );
